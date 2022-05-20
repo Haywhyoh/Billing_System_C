@@ -1,0 +1,33 @@
+// print resturant name
+// print the available operation options
+
+// accepts user input option
+//  1 -generate receipt
+/**
+ * we will create a struct for each item order
+ * the struct will contain 
+ * -quantity
+ * -the item
+ * -price per quantity
+ */ 
+
+/**
+ * we will also have a struct for the total order
+ * it contains the customer name
+ * the datee;
+ * the number of items
+ * an array of teh item structure
+ */
+
+// to get our date, we use the MACRO date
+
+//
+
+//
+//generate bill header
+
+// function to generate the bill body
+//     the function takes 3 parameters
+//     -item
+//     -qty
+//     -price
