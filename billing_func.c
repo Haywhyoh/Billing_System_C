@@ -4,7 +4,7 @@ item get_item_input()
 {
     item *item_input;
     order *order_input;
-    int n = 0;
+    int n,j = 0;
     char date[12] = __DATE__;
 
     item_input = malloc(sizeof(item));
@@ -16,7 +16,10 @@ item get_item_input()
     scanf("%*[^\n]"); 
 
     strcpy(order_input->date, date);
-    printf("%s\n", order_input->date);
+    printf("\n%s\n", order_input->date);
+
+    printf("=======================================\n");
+
     while(n >= 0)
     {
         printf("\nEnter item name: ");
@@ -34,6 +37,8 @@ item get_item_input()
         scanf("%i",&item_input->quantity);
         fgetc(stdin);
         printf("\n");
+
+        order_input->item_array[j] = {item_input->item_name, item_input->quantity, item_input->price};
 
         n--;
         printf("=======================================\n");
