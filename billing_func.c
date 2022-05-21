@@ -5,6 +5,7 @@ item get_item_input()
     item *item_input;
     order *order_input;
     int n = 0;
+    char date[12] = __DATE__;
 
     item_input = malloc(sizeof(item));
     order_input = malloc(sizeof(order));
@@ -13,8 +14,9 @@ item get_item_input()
     fgets(order_input->customer_name, 50, stdin);
      // to suppress the '/n' in fgets
     scanf("%*[^\n]"); 
-    //get the date
-    strcpy(order_input->date, __DATE__ );
+
+    strcpy(order_input->date, date);
+    printf("%s\n", order_input->date);
     while(n >= 0)
     {
         printf("\nEnter item name: ");

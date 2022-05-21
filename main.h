@@ -20,7 +20,7 @@ typedef struct item{
 
 typedef struct order{
     char customer_name[50];
-    char date;
+    char date[12];
     int  num_of_items;
     item item_array[50];
 }order;
