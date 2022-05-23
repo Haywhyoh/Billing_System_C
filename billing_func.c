@@ -38,7 +38,7 @@ item get_item_input()
         fgetc(stdin);
         printf("\n");
 
-        order_input->item_array[j] = {item_input->item_name, item_input->quantity, item_input->price};
+        // order_input->item_array[j] = {item_input->item_name, item_input->quantity, item_input->price};
 
         n--;
         printf("=======================================\n");
