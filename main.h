@@ -16,6 +16,7 @@ typedef struct item{
     char item_name[20];
     int  quantity;
     float price;
+    float item_total;
 }item;
 
 typedef struct order{
@@ -23,12 +24,13 @@ typedef struct order{
     char date[12];
     int  num_of_items;
     item item_array[50];
+    float total;
 }order;
 
 
 void welcome_message();
 
 order get_item_input();
-void invoice_header(order *order_input);
+void invoice_header(order *order_input, int j);
 
 #endif

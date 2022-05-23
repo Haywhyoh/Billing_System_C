@@ -2,15 +2,23 @@
 
 int main()
 {
-    int op_num = 0;
+    char op_num = 1;
+    char *ptr;
+    ptr = &op_num;
 
     welcome_message();
     
-    scanf("%i",&op_num);
-    printf("=======================================\n");
+    fgets(ptr, 2, stdin);
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF)
+    {
+        continue;
+    }
+
+    printf("===============================================\n");
     switch (op_num)
     {
-    case 1:
+    case '1':
         get_item_input();
 
         break;
