@@ -28,6 +28,7 @@ typedef struct order{
 
 void welcome_message();
 
-item get_item_input();
+order get_item_input();
+void invoice_header(order *order_input);
 
 #endif

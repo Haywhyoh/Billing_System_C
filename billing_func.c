@@ -1,19 +1,21 @@
 #include "main.h"
 
-item get_item_input()
+order get_item_input()
 {
     item *item_input;
     order *order_input;
-    int n= 1;
+    int n = 1;
+    int j = 1;
     char date[12] = __DATE__;
 
     item_input = malloc(sizeof(item));
     order_input = malloc(sizeof(order));
 
     printf("Enter customer's name: ");
-    fgets(order_input->customer_name, 50, stdin);
-     // to suppress the '/n' in fgets
+    scanf("%s", order_input->customer_name);
+    
     scanf("%*[^\n]"); 
+    printf("\n%s\n",order_input->customer_name);
 
     strcpy(order_input->date, date);
     printf("\n%s\n", order_input->date);
@@ -22,7 +24,7 @@ item get_item_input()
 
     while(n >= 0)
     {
-        printf("\nEnter item name: ");
+        printf("\nEnter item name %i: ", n);
         scanf("%s", item_input->item_name);
         getchar();
         printf("\n");
@@ -47,9 +49,26 @@ item get_item_input()
 
     };
 
+    
 
-
+    invoice_header(order_input);
     free(item_input);
-    return *item_input;
+    return *order_input;
 }
 
+void invoice_header(order *order_input)
+{
+    int i;
+    
+    printf("\n=======================================\n");
+    printf("%s \n", order_input->customer_name);
+    printf("%s\n", order_input->date);
+    printf("=======================================\n\n");
+
+    for (i = 0; i <= j; i++)
+    {
+        printf("\n%s\t%i\t%2f\t",  order_input->item_array[i].item_name, order_input->item_array[i].quantity, order_input->item_array[i].price);
+    }
+    printf("Item\tUnit Price\tPrice\t\n");
+}
+    
