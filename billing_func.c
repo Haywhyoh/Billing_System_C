@@ -4,7 +4,7 @@ item get_item_input()
 {
     item *item_input;
     order *order_input;
-    int n,j = 0;
+    int n= 1;
     char date[12] = __DATE__;
 
     item_input = malloc(sizeof(item));
@@ -38,12 +38,17 @@ item get_item_input()
         fgetc(stdin);
         printf("\n");
 
-        // order_input->item_array[j] = {item_input->item_name, item_input->quantity, item_input->price};
+        order_input->item_array[n].quantity = item_input->quantity;
+        memcpy(order_input->item_array[n].item_name, item_input->item_name, (sizeof(char) * 20));
+        order_input->item_array[n].price = item_input->price;
 
         n--;
         printf("=======================================\n");
 
     };
+
+
+
     free(item_input);
     return *item_input;
 }
